@@ -48,8 +48,8 @@ test = [
 polycleaver2 = "polycleaver2.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/ericmates/PolyCleaver2"
-Repository = "https://github.com/ericmates/PolyCleaver2"
+Homepage = "https://github.com/ericmates/polycleaver2"
+Repository = "https://github.com/ericmates/polycleaver2"
 "PolyCleaver (v1)" = "https://github.com/ericmates/PolyCleaver"
 
 [tool.setuptools]

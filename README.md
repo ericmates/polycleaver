@@ -57,7 +57,7 @@ clays like kaolinite, whose neutral layer carries an intrinsic dipole.
 ## Installation
 
 ```bash
-git clone https://github.com/ericmates/PolyCleaver2.git
+git clone https://github.com/ericmates/polycleaver2.git
 cd PolyCleaver2
 pip install -e .            # pymatgen, ase, numpy
 pip install -e ".[webapp]"  # optional: FastAPI backend for the web interface
