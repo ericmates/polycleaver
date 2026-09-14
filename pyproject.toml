@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polycleaver2"
+version = "2.0.0a1"
+description = "Non-polar, stoichiometric surface slabs of complex minerals: polyanion scaffolds, counter-cations, hydration water and intercalated molecules."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+  { name = "Eric Mates-Torres", email = "eric.mates@uab.cat" },
+]
+keywords = ["surface", "slab", "miller", "mineral", "silicate", "phosphate", "clay", "dipole", "pymatgen", "DFT"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Chemistry",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+  "pymatgen>=2024.3",
+  "ase>=3.23",
+  "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+webapp = [
+  "fastapi>=0.111",
+  "uvicorn[standard]>=0.29",
+  "python-multipart>=0.0.9",
+]
+optimize = [
+  "mace-torch>=0.3",
+]
+test = [
+  "pytest>=8",
+]
+
+[project.scripts]
+polycleaver2 = "polycleaver2.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ericmates/PolyCleaver2"
+Repository = "https://github.com/ericmates/PolyCleaver2"
+"PolyCleaver (v1)" = "https://github.com/ericmates/PolyCleaver"
+
+[tool.setuptools]
+packages = ["polycleaver2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: full slab-generation runs (minutes)"]

@@ -1,0 +1,12 @@
+{
+    "_doc": "Forsterite Mg2SiO4 (110): enumerate every non-polar termination between 12 and 20 Å and rank them by broken bonds per Å². Expected: ~4 unique terminations; the symmetric Mg32Si16O64 slab at ~15 Å ranks #1 and matches the DFT reference examples/reference/POSCAR_forsterite_110_DFT.",
+    "filename": "../structures/forsterite.cif",
+    "target_thickness": null,
+    "thickness_range": [12, 20],
+    "vacuum_size": 15.0,
+    "dipole_threshold": 0.3,
+    "auto_select_stable": true,
+    "allow_nonstoichiometric": false,
+    "mode": "single",
+    "single_hkl": [1, 1, 0]
+}

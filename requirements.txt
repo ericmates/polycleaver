@@ -1,0 +1,12 @@
+# Core (slab generation)
+pymatgen>=2024.3
+ase>=3.23
+numpy>=1.26
+
+# Web app backend (optional):  pip install -e ".[webapp]"
+# fastapi>=0.111
+# uvicorn[standard]>=0.29
+# python-multipart>=0.0.9
+
+# MACE-MP relaxation + Wulff construction in the web app (optional):  pip install -e ".[optimize]"
+# mace-torch>=0.3

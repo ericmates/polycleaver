@@ -1,0 +1,11 @@
+{
+    "_doc": "Diopside CaMgSi2O6 (single-chain pyroxene). Chain silicates are the hardest case: layer-wise thinning can leave a non-stoichiometric number of chain tetrahedra, and such cuts are rejected by the net-charge check. Scans all symmetrically distinct planes up to index 1.",
+    "filename": "../structures/diopside.cif",
+    "target_thickness": 15.0,
+    "thickness_range": null,
+    "vacuum_size": 15.0,
+    "dipole_threshold": 0.3,
+    "auto_select_stable": true,
+    "mode": "max",
+    "max_index": 1
+}

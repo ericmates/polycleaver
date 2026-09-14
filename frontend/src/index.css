@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080d1a;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Thin scrollbar for results strip */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thumb-border::-webkit-scrollbar-thumb {
+  background: #1e2d4a;
+  border-radius: 2px;
+}
+
+/* Number inputs */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 0.4;
+}

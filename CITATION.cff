@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: >-
+  If you use PolyCleaver 2, please cite the software (this record) and the
+  original PolyCleaver paper listed under "preferred-citation" until the
+  PolyCleaver 2 paper is published.
+title: "PolyCleaver 2: non-polar, stoichiometric surface slabs of complex minerals"
+type: software
+version: 2.0.0a1
+date-released: "2026-09-15"
+license: GPL-3.0
+repository-code: "https://github.com/ericmates/PolyCleaver2"
+authors:
+  - family-names: Mates-Torres
+    given-names: Eric
+    email: eric.mates@uab.cat
+    affiliation: "Universitat Autònoma de Barcelona"
+keywords:
+  - surface slabs
+  - non-polar surfaces
+  - minerals
+  - silicates
+  - phosphates
+  - clays
+  - hydrated minerals
+  - pymatgen
+  - DFT
+preferred-citation:
+  type: article
+  title: "PolyCleaver: a Python-based pipeline for the generation of non-polar, stoichiometric surfaces from ionic compounds with polyatomic anions"
+  authors:
+    - family-names: Mates-Torres
+      given-names: Eric
+    - family-names: Rimola
+      given-names: Albert
+  journal: "Journal of Applied Crystallography"
+  volume: 57
+  start: 503
+  end: 508
+  year: 2024
+  doi: 10.1107/S1600576724001286

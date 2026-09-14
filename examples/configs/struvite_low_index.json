@@ -1,0 +1,11 @@
+{
+    "_doc": "Struvite MgNH4PO4·6H2O: phosphate scaffold, hexaaqua Mg2+ (hydration target 6 H2O per Mg) and NH4+ as two distinct molecular species. Exercises the hydrated-cation and intercalated-molecule code paths. Low-index scan.",
+    "filename": "../structures/struvite.cif",
+    "target_thickness": 14.0,
+    "thickness_range": null,
+    "vacuum_size": 15.0,
+    "dipole_threshold": 0.3,
+    "auto_select_stable": true,
+    "mode": "list",
+    "custom_list": [[0, 0, 1], [0, 1, 0], [1, 0, 0]]
+}
