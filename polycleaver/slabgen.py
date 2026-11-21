@@ -227,7 +227,7 @@ def structure_to_slab(structure, ref_slab):
 
 def load_config(path="config.json"):
     """
-    Load run parameters from a JSON file and return them as a dict.
+    Load run parameters from a JSON file (or a dict) and return them as a dict.
 
     All keys are optional — missing ones fall back to sensible defaults.
     Keys whose names start with ``_`` are treated as inline documentation
@@ -235,9 +235,10 @@ def load_config(path="config.json"):
 
     Parameters
     ----------
-    path : str or Path
+    path : str, Path or dict
         Path to the JSON config file (default: ``config.json`` in the
-        current working directory).
+        current working directory), or a dict with the same keys, which is
+        validated in the same way.
 
     Returns
     -------
@@ -266,16 +267,21 @@ def load_config(path="config.json"):
         "allow_nonstoichiometric": False,
     }
 
-    path = Path(path)
-    try:
-        raw = json.loads(path.read_text())
-    except FileNotFoundError:
-        raise FileNotFoundError(
-            f"Config file not found: {path}\n"
-            f"  Copy examples/configs/forsterite_110_range.json to config.json and set 'filename'."
-        )
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Invalid JSON in {path}: {exc}") from exc
+    if isinstance(path, dict):
+        raw = dict(path)
+        path = "config"                      # label used in error messages
+    else:
+        path = Path(path)
+        try:
+            raw = json.loads(path.read_text())
+        except FileNotFoundError:
+            raise FileNotFoundError(
+                f"Config file not found: {path}\n"
+                f"  Copy examples/configs/forsterite_110_range.json to config.json and set "
+                f"'filename', or pass the structure directly: polycleaver -s bulk.cif --hkl 1 1 0"
+            )
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"Invalid JSON in {path}: {exc}") from exc
 
     # Overlay user values over defaults; skip documentation-comment keys
     cfg = {**defaults, **{k: v for k, v in raw.items() if not k.startswith("_")}}

@@ -1,11 +1,24 @@
 """
-polycleaver — non-polar, stoichiometric surface slabs of complex minerals.
+polycleaver: non-polar, stoichiometric surface slabs of complex minerals.
 
-Successor to PolyCleaver (Mates-Torres & Rimola, J. Appl. Cryst. 57, 503, 2024).
-Handles isolated-polyhedra, chain, sheet and framework polyanion scaffolds,
-counter-cations, and discrete molecular species (H2O, OH-, NH3, NH4+ …).
+polycleaver classifies the atoms of a bulk structure into a polyanion scaffold,
+counter-cations and discrete molecules (H2O, OH-, NH3, NH4+ ...), cuts it with
+pymatgen's SlabGenerator, rebuilds each slab by placing cations and molecules
+combinatorially to cancel the z-dipole, and ranks the resulting terminations by
+broken bonds per unit area.  The 0.x series is described in Mates-Torres &
+Rimola, J. Appl. Cryst. 57, 503-508 (2024); version 1.0 is a rewrite.
 
 Typical programmatic use::
+
+    import polycleaver
+
+    summary = polycleaver.run({"filename": "forsterite.cif",
+                               "single_hkl": [1, 1, 0],
+                               "thickness_range": [12, 20]}, outdir="out")
+    best = summary["slabs"][0]          # rank 1: fewest broken bonds per area
+    print(best["path"], best["thickness_A"], best["dipole_z_eA"])
+
+or, one step at a time::
 
     from pymatgen.core import Structure
     from polycleaver import ChemicalAnalyzer, ensure_oxidation_states, generate_slabs_for_hkl
@@ -18,7 +31,7 @@ Typical programmatic use::
         s.to(filename=f"slab_110_{i}.cif")
 """
 
-__version__ = "2.0.0a1"
+__version__ = "1.0.0"
 
 from .slabgen import (                       # noqa: E402,F401
     COVALENT_ELEMENTS,
@@ -39,6 +52,8 @@ from .slabgen import (                       # noqa: E402,F401
     _combinatorial_search,
     _nonstoich_charges,
 )
+from .cli import run, analyse                # noqa: E402,F401
+from .summary import bulk_record, slab_record  # noqa: E402,F401
 
 __all__ = [
     "__version__",
@@ -54,4 +69,8 @@ __all__ = [
     "score_surface_stability",
     "report_slab_detail",
     "print_no_surfaces_diagnostic",
+    "run",
+    "analyse",
+    "bulk_record",
+    "slab_record",
 ]
