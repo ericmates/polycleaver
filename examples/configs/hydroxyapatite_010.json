@@ -1,0 +1,11 @@
+{
+    "_doc": "Hydroxyapatite Ca10(PO4)6(OH)2 (010): phosphate scaffold + two Ca sites + OH- as a molecular species. target_thickness must be >= 17 Å (two formula units along b); with 15 Å the thinning over-shoots and no OH- arrangement can cancel the dipole. Expected: Ca20(PO4)12(OH)4, 88 atoms, symmetric, dipole 0.000 eÅ — matches examples/reference/POSCAR_hydroxyapatite_010_DFT.",
+    "filename": "../structures/hydroxyapatite.cif",
+    "target_thickness": 17.0,
+    "thickness_range": null,
+    "vacuum_size": 15.0,
+    "dipole_threshold": 0.3,
+    "auto_select_stable": true,
+    "mode": "single",
+    "single_hkl": [0, 1, 0]
+}

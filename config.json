@@ -1,0 +1,44 @@
+{
+    "_doc": "PolyCleaver 2 run configuration — edit this file, then run:  polycleaver2   (or: python -m polycleaver2)",
+    "_doc2": "Keys starting with _ are documentation comments and are ignored. More examples in examples/configs/.",
+
+    "_section_input": "──── Input ──────────────────────────────────────────────",
+    "_note_filename": "Bulk structure file (CIF, POSCAR, … anything pymatgen reads). Relative paths are resolved against this config file's directory, then the current directory.",
+    "filename": "examples/structures/forsterite.cif",
+
+    "_section_thickness": "──── Slab geometry ──────────────────────────────────",
+    "_note_thickness": "Minimum slab thickness in Å (lower-bound preference). The algorithm collects all non-polar scaffold states and picks the thinnest one still ≥ target. Used when thickness_range is null.",
+    "target_thickness": 15.0,
+
+    "_note_thickness_range": "Optional range [min, max] in Å. When set, ALL valid non-polar terminations between min and max Å are generated and ranked — one CIF per unique termination. Set to null to use target_thickness instead.",
+    "thickness_range": null,
+
+    "_note_vacuum": "Vacuum gap in Å above and below the slab.",
+    "vacuum_size": 15.0,
+
+    "_note_dipole": "Maximum allowed |z-dipole| in eÅ. 0.3 is a tight criterion; raise to 0.5–1.0 if no slabs are found.",
+    "dipole_threshold": 0.3,
+
+    "_note_auto_select": "Sort accepted slabs by surface stability (broken bonds per Å², then symmetry, then coordination saturation). Most stable slab listed and numbered first.",
+    "auto_select_stable": true,
+
+    "_note_nonstoich": "Allow non-stoichiometric slabs (net charge ≠ 0). Normally discarded. Set to true to keep them for reactivity studies where you plan to add H atoms manually. Such CIFs are named slab_hkl_N_NS.cif.",
+    "allow_nonstoichiometric": false,
+
+    "_section_miller": "──── Miller indices ─────────────────────────────────────",
+    "_note_mode": "How to choose surface orientations. Options: 'single' | 'max' | 'list'",
+    "mode": "single",
+
+    "_note_single_hkl": "Used when mode = 'single'. Miller index as [h, k, l].",
+    "single_hkl": [1, 1, 0],
+
+    "_note_max_index": "Used when mode = 'max'. Generate all symmetrically distinct hkl up to this value.",
+    "max_index": 1,
+
+    "_note_custom_list": "Used when mode = 'list'. List of [h, k, l] indices to try.",
+    "custom_list": [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1]
+    ]
+}

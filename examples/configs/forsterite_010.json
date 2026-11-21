@@ -1,0 +1,11 @@
+{
+    "_doc": "Forsterite Mg2SiO4 (010): isolated SiO4 tetrahedra. The bare scaffold is always polar here — the Mg2+ sub-lattice cancels the dipole, which is why the scaffold dipole is NOT filtered for isolated-polyhedra minerals. One full b-period (~10 Å) is the minimum thickness.",
+    "filename": "../structures/forsterite.cif",
+    "target_thickness": 10.0,
+    "thickness_range": null,
+    "vacuum_size": 15.0,
+    "dipole_threshold": 0.3,
+    "auto_select_stable": true,
+    "mode": "single",
+    "single_hkl": [0, 1, 0]
+}
