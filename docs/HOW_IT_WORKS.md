@@ -1,7 +1,7 @@
 # How the Slab Generator Works
 
 A plain-language guide for materials scientists who want to understand
-what `polycleaver2` does without reading every line of code.
+what `polycleaver` does without reading every line of code.
 
 ---
 
@@ -19,18 +19,22 @@ so that the z-dipole moment is essentially zero.
 
 ## Quick start
 
-1. Install the package: `pip install -e .` from the repository root.
-2. Edit `config.json` — set `filename`, `mode`, and the Miller index you want.
+1. Install the package: `pip install polycleaver` (or `pip install -e .` from the repository root).
+2. Edit `config.json` — set `filename`, `mode`, and the Miller index you want —
+   or give the same parameters as command-line options.
 3. Run:
 
 ```bash
-polycleaver2                      # reads ./config.json
-polycleaver2 my_experiment.json   # a different config file
-polycleaver2 my_experiment.json -o out/   # write CIFs somewhere else
+polycleaver                                  # reads ./config.json
+polycleaver my_experiment.json               # a different config file
+polycleaver my_experiment.json -o out/       # write CIFs somewhere else
+polycleaver -s bulk.cif --hkl 0 1 0 --thickness 10 -o out/   # no config file
 ```
 
-Output CIFs are written to the output directory: `slab_010_0.cif`, `slab_010_1.cif`, etc.
-Ready-made configs for the bundled examples live in `examples/configs/`.
+Output CIFs are written to the output directory: `slab_010_0.cif`, `slab_010_1.cif`, etc.,
+together with `polycleaver_summary.json`, which lists the parameters, the library
+versions and the properties of every slab. Ready-made configs for the bundled
+examples live in `examples/configs/`.
 
 ---
 

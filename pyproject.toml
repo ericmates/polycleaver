@@ -1,27 +1,34 @@
 [build-system]
-requires = ["setuptools>=64", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "polycleaver"
-version = "2.0.0a1"
+dynamic = ["version"]
 description = "Non-polar, stoichiometric surface slabs of complex minerals: polyanion scaffolds, counter-cations, hydration water and intercalated molecules."
 readme = "README.md"
-license = { file = "LICENSE" }
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 authors = [
   { name = "Eric Mates-Torres", email = "eric.mates@uab.cat" },
 ]
-keywords = ["surface", "slab", "miller", "mineral", "silicate", "phosphate", "clay", "dipole", "pymatgen", "DFT"]
+maintainers = [
+  { name = "Eric Mates-Torres", email = "eric.mates@uab.cat" },
+]
+keywords = ["surface", "slab", "miller", "mineral", "silicate", "phosphate", "clay", "hydrated minerals", "dipole", "pymatgen", "DFT"]
 classifiers = [
-  "Development Status :: 3 - Alpha",
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
   "Intended Audience :: Science/Research",
-  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
   "Topic :: Scientific/Engineering :: Chemistry",
   "Topic :: Scientific/Engineering :: Physics",
 ]
@@ -32,6 +39,9 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+mcp = [
+  "mcp>=1.2",
+]
 webapp = [
   "fastapi>=0.111",
   "uvicorn[standard]>=0.29",
@@ -43,17 +53,27 @@ optimize = [
 test = [
   "pytest>=8",
 ]
+docs = [
+  "mkdocs-material>=9.5",
+  "mkdocs-include-markdown-plugin>=6.0",
+]
 
 [project.scripts]
 polycleaver = "polycleaver.cli:main"
+polycleaver-mcp = "polycleaver.mcp_server:main"
 
 [project.urls]
 Homepage = "https://github.com/ericmates/polycleaver"
 Repository = "https://github.com/ericmates/polycleaver"
-"PolyCleaver (v1)" = "https://github.com/ericmates/PolyCleaver"
+Documentation = "https://polycleaver.readthedocs.io"
+Changelog = "https://github.com/ericmates/polycleaver/blob/main/CHANGELOG.md"
+Issues = "https://github.com/ericmates/polycleaver/issues"
 
 [tool.setuptools]
 packages = ["polycleaver"]
+
+[tool.setuptools.dynamic]
+version = { attr = "polycleaver.__version__" }
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

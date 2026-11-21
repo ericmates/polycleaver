@@ -1,0 +1,72 @@
+# Conda recipe for polycleaver (rattler-build format).
+#
+# Local build from this checkout:
+#   conda install -c conda-forge rattler-build
+#   rattler-build build --recipe conda/recipe.yaml -c conda-forge
+#   conda install -c ./output -c conda-forge polycleaver
+#
+# For a conda-forge submission, replace `source` with the PyPI sdist
+# (url + sha256) and drop `python_min` from the context.
+context:
+  name: polycleaver
+  version: "1.0.0"
+  python_min: "3.10"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - polycleaver = polycleaver.cli:main
+      - polycleaver-mcp = polycleaver.mcp_server:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools >=77
+    - wheel
+  run:
+    - python >=${{ python_min }}
+    - pymatgen >=2024.3
+    - ase >=3.23
+    - numpy >=1.26
+  run_constraints:
+    - mcp >=1.2
+
+tests:
+  - python:
+      imports:
+        - polycleaver
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - polycleaver --version
+      - polycleaver --help
+
+about:
+  homepage: https://github.com/ericmates/polycleaver
+  repository: https://github.com/ericmates/polycleaver
+  license: GPL-3.0-only
+  license_file: LICENSE
+  summary: Non-polar, stoichiometric surface slabs of complex minerals from a bulk structure.
+  description: |
+    polycleaver builds non-polar, charge-neutral and stoichiometric surface slabs
+    of minerals with polyanion scaffolds (silicates, phosphates, sulphates),
+    including structural hydroxyl, crystal water and intercalated molecules,
+    ready to be relaxed with DFT or machine-learned potentials.
+
+extra:
+  recipe-maintainers:
+    - ericmates

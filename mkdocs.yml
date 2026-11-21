@@ -1,0 +1,33 @@
+site_name: polycleaver
+site_description: Non-polar, stoichiometric surface slabs of complex minerals
+site_url: https://polycleaver.readthedocs.io/
+repo_url: https://github.com/ericmates/polycleaver
+repo_name: ericmates/polycleaver
+docs_dir: docs
+
+theme:
+  name: material
+
+nav:
+  - Overview: index.md
+  - How it works: HOW_IT_WORKS.md
+  - Algorithm flowchart: ALGORITHM_FLOWCHART.md
+  - Design notes: DESIGN_NOTES.md
+  - Web interface: WEBAPP.md
+  - Changelog: changelog.md
+
+plugins:
+  - search
+  - include-markdown
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+exclude_docs: |
+  requirements.txt

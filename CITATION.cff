@@ -1,14 +1,14 @@
 cff-version: 1.2.0
 message: >-
-  If you use PolyCleaver 2, please cite the software (this record) and the
-  original PolyCleaver paper listed under "preferred-citation" until the
-  PolyCleaver 2 paper is published.
-title: "PolyCleaver 2: non-polar, stoichiometric surface slabs of complex minerals"
+  If you use polycleaver, please cite the original polycleaver paper listed
+  under "preferred-citation", together with the version of the software that
+  you used (this record).
+title: "polycleaver: non-polar, stoichiometric surface slabs of complex minerals"
 type: software
-version: 2.0.0a1
-date-released: "2026-09-15"
-license: GPL-3.0
-repository-code: "https://github.com/ericmates/polycleaver2"
+version: 1.0.0
+date-released: "2026-11-21"
+license: GPL-3.0-only
+repository-code: "https://github.com/ericmates/polycleaver"
 authors:
   - family-names: Mates-Torres
     given-names: Eric

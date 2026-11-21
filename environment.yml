@@ -1,0 +1,20 @@
+# Conda environment for polycleaver, with every dependency from conda-forge.
+#
+#   git clone https://github.com/ericmates/polycleaver.git
+#   cd polycleaver
+#   conda env create -f environment.yml
+#   conda activate polycleaver
+#
+# polycleaver itself is installed from this checkout in editable mode.
+name: polycleaver
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - pymatgen>=2024.3
+  - ase>=3.23
+  - numpy>=1.26
+  - pytest>=8
+  - pip
+  - pip:
+      - --editable .

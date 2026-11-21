@@ -1,7 +1,10 @@
-# Core (slab generation)
+# Core (slab generation). Prefer:  pip install polycleaver
 pymatgen>=2024.3
 ase>=3.23
 numpy>=1.26
+
+# MCP server for LLM agents (optional):  pip install "polycleaver[mcp]"
+# mcp>=1.2
 
 # Web app backend (optional):  pip install -e ".[webapp]"
 # fastapi>=0.111

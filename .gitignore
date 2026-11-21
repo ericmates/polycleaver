@@ -23,3 +23,9 @@ frontend/dist/
 .vscode/
 .idea/
 .claude/
+
+# polycleaver run outputs and documentation build
+polycleaver_summary.json
+polycleaver.log
+site/
+output/
