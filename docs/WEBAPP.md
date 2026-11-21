@@ -1,4 +1,4 @@
-# Surface Lab — the PolyCleaver 2 web interface
+# Surface Lab — the polycleaver web interface
 
 A single-user FastAPI + React/Three.js front end for the generator: upload a CIF,
 inspect the bulk chemistry, generate slabs for any Miller indices, view them in 3D

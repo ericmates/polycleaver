@@ -163,7 +163,7 @@ def serialize_structure(structure, analyzer=None):
 
 def serialize_slab(slab, bulk_len=None):
     """Serialise a Slab with PBC-wrapped display coords and coordination polyhedra."""
-    from polycleaver2 import ChemicalAnalyzer
+    from polycleaver import ChemicalAnalyzer
 
     an = ChemicalAnalyzer(slab)
 

@@ -11,7 +11,7 @@ import numpy as np
 from pymatgen.core import Structure
 from pymatgen.io.ase import AseAtomsAdaptor
 
-from polycleaver2 import ensure_oxidation_states
+from polycleaver import ensure_oxidation_states
 
 
 # ---------------------------------------------------------------------------

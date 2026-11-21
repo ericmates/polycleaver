@@ -1,4 +1,4 @@
-# PolyCleaver 2 — Full Algorithm Flowchart
+# polycleaver — full algorithm flowchart
 
 ```mermaid
 flowchart TD
@@ -9,7 +9,7 @@ flowchart TD
     classDef accept    fill:#2a9d8f,color:#fff,stroke:#21867a
     classDef loop      fill:#457b9d,color:#fff,stroke:#1d3557
 
-    START(["▶ START\npython polycleaver2"]):::startend
+    START(["▶ START\npython polycleaver"]):::startend
     START --> LoadConfig["Load config.json\ntarget_thickness · vacuum · dipole_tol\nmode · hkl"]:::process
     LoadConfig --> LoadCIF["Load bulk CIF\nStructure.from_file()"]:::process
     LoadCIF --> OxiState["Assign oxidation states\npymatgen guess → fallback to OXI_MAP"]:::process

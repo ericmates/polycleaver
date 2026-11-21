@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Command-line entry point for PolyCleaver 2.
+Command-line entry point for polycleaver.
 
-    polycleaver2                    # uses ./config.json
-    polycleaver2 my_run.json        # alternate config file
-    polycleaver2 my_run.json -o out # write CIFs to ./out
-    python -m polycleaver2 …        # equivalent
+    polycleaver                    # uses ./config.json
+    polycleaver my_run.json        # alternate config file
+    polycleaver my_run.json -o out # write CIFs to ./out
+    python -m polycleaver …        # equivalent
 
 All run parameters live in the JSON config file (see ``load_config`` in
-``polycleaver2.slabgen`` and the ``examples/configs`` directory).
+``polycleaver.slabgen`` and the ``examples/configs`` directory).
 """
 
 import sys
@@ -36,15 +36,15 @@ from .slabgen import (
 
 def build_parser():
     parser = argparse.ArgumentParser(
-        prog="polycleaver2",
-        description="PolyCleaver 2 — non-polar, stoichiometric surface slab "
+        prog="polycleaver",
+        description="polycleaver — non-polar, stoichiometric surface slab "
                     "generator for complex minerals.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Edit config.json to set your parameters, then run:\n"
-            "  polycleaver2\n\n"
+            "  polycleaver\n\n"
             "Or point to a different config file:\n"
-            "  polycleaver2 my_run.json\n\n"
+            "  polycleaver my_run.json\n\n"
             "Example configs live in examples/configs/."
         ),
     )
@@ -101,7 +101,7 @@ def run(config_path, outdir="."):
     #  Load bulk structure
     # ------------------------------------------------------------------
     print("=" * 68)
-    print(f"  POLYCLEAVER 2  —  non-polar surface slab generator  (v{__version__})")
+    print(f"  polycleaver  —  non-polar surface slab generator  (v{__version__})")
     print(f"  Config : {config_path}")
     print(f"  File   : {cif_path}")
     print("=" * 68)

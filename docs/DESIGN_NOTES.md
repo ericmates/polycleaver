@@ -1,6 +1,6 @@
 # Design notes and lessons learned
 
-Developer-facing notes on the non-obvious decisions in `polycleaver2/slabgen.py`.
+Developer-facing notes on the non-obvious decisions in `polycleaver/slabgen.py`.
 Read `HOW_IT_WORKS.md` first for the plain-language pipeline.
 
 ## Atom classification (`ChemicalAnalyzer`)

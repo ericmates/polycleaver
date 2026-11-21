@@ -1,5 +1,5 @@
 """
-PolyCleaver 2 — non-polar, stoichiometric surface slabs of complex minerals.
+polycleaver — non-polar, stoichiometric surface slabs of complex minerals.
 
 Successor to PolyCleaver (Mates-Torres & Rimola, J. Appl. Cryst. 57, 503, 2024).
 Handles isolated-polyhedra, chain, sheet and framework polyanion scaffolds,
@@ -8,7 +8,7 @@ counter-cations, and discrete molecular species (H2O, OH-, NH3, NH4+ …).
 Typical programmatic use::
 
     from pymatgen.core import Structure
-    from polycleaver2 import ChemicalAnalyzer, ensure_oxidation_states, generate_slabs_for_hkl
+    from polycleaver import ChemicalAnalyzer, ensure_oxidation_states, generate_slabs_for_hkl
 
     bulk = ensure_oxidation_states(Structure.from_file("forsterite.cif"))
     bulk_an = ChemicalAnalyzer(bulk)

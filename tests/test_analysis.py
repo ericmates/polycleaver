@@ -11,7 +11,7 @@ from pathlib import Path
 import pytest
 from pymatgen.core import Structure
 
-from polycleaver2 import ChemicalAnalyzer, ensure_oxidation_states, _compute_bulk_cn_all
+from polycleaver import ChemicalAnalyzer, ensure_oxidation_states, _compute_bulk_cn_all
 
 STRUCTURES = Path(__file__).resolve().parent.parent / "examples" / "structures"
 

@@ -1,5 +1,5 @@
 {
-    "_doc": "PolyCleaver 2 run configuration — edit this file, then run:  polycleaver2   (or: python -m polycleaver2)",
+    "_doc": "polycleaver run configuration — edit this file, then run:  polycleaver   (or: python -m polycleaver)",
     "_doc2": "Keys starting with _ are documentation comments and are ignored. More examples in examples/configs/.",
 
     "_section_input": "──── Input ──────────────────────────────────────────────",

@@ -12,7 +12,7 @@ import numpy as np
 import pytest
 from pymatgen.core import Structure
 
-from polycleaver2 import (
+from polycleaver import (
     ChemicalAnalyzer,
     ensure_oxidation_states,
     generate_slabs_for_hkl,

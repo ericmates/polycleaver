@@ -11,7 +11,7 @@ _sys.path.insert(0, _os.path.join(_os.path.dirname(__file__), '..', '..'))
 
 from pymatgen.core import Structure
 from pymatgen.core.surface import get_symmetrically_distinct_miller_indices
-from polycleaver2 import ChemicalAnalyzer, ensure_oxidation_states, generate_slabs_for_hkl
+from polycleaver import ChemicalAnalyzer, ensure_oxidation_states, generate_slabs_for_hkl
 from api.core.structure_serializer import serialize_slab
 
 

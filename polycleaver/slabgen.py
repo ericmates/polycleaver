@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-PolyCleaver 2 — non-polar, stoichiometric surface slab generator for complex
+polycleaver — non-polar, stoichiometric surface slab generator for complex
 minerals (silicates, phosphates, sulfates, clays, hydrated and intercalated
 structures).
 
 This module is the computational core: bulk chemical analysis, slab stripping
 and thinning, combinatorial cation/molecule placement, and stability scoring.
-The command-line entry point lives in ``polycleaver2.cli``.
+The command-line entry point lives in ``polycleaver.cli``.
 
 Given a bulk CIF structure, this script:
   1. Analyses the bulk to identify the polyanion scaffold (centers + O),
@@ -169,7 +169,7 @@ def ensure_oxidation_states(structure):
             raise ValueError(
                 f"Could not assign oxidation states: pymatgen's guess failed "
                 f"and these elements are absent from OXI_MAP: {missing}. "
-                f"Add them to OXI_MAP in polycleaver2/slabgen.py."
+                f"Add them to OXI_MAP in polycleaver/slabgen.py."
             )
         s = Structure(
             s.lattice,

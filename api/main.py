@@ -20,13 +20,13 @@ from api.core.structure_serializer import (
 )
 from api.core.slab_runner import run_job
 from api.core.optimizer import run_optimization_job
-from polycleaver2 import ChemicalAnalyzer, ensure_oxidation_states
+from polycleaver import ChemicalAnalyzer, ensure_oxidation_states
 
 # ---------------------------------------------------------------------------
 # App setup
 # ---------------------------------------------------------------------------
 
-app = FastAPI(title="PolyCleaver 2 — Surface Lab API")
+app = FastAPI(title="polycleaver — Surface Lab API")
 
 app.add_middleware(
     CORSMiddleware,

@@ -3,7 +3,7 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "polycleaver2"
+name = "polycleaver"
 version = "2.0.0a1"
 description = "Non-polar, stoichiometric surface slabs of complex minerals: polyanion scaffolds, counter-cations, hydration water and intercalated molecules."
 readme = "README.md"
@@ -45,15 +45,15 @@ test = [
 ]
 
 [project.scripts]
-polycleaver2 = "polycleaver2.cli:main"
+polycleaver = "polycleaver.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/ericmates/polycleaver2"
-Repository = "https://github.com/ericmates/polycleaver2"
+Homepage = "https://github.com/ericmates/polycleaver"
+Repository = "https://github.com/ericmates/polycleaver"
 "PolyCleaver (v1)" = "https://github.com/ericmates/PolyCleaver"
 
 [tool.setuptools]
-packages = ["polycleaver2"]
+packages = ["polycleaver"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
